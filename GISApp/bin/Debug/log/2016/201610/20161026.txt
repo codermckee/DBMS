@@ -1,0 +1,1155 @@
+
+ 
+记录时间：2016-10-26 11:20:56,828 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:21:16,704 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:21:19,224 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : NAME LIKE '%52%'
+ 
+
+ 
+记录时间：2016-10-26 11:21:32,819 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:22:24,002 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:29:46,225 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:40:51,243 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:40:56,305 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:46:10,192 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:46:13,486 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:46:15,282 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : NAME LIKE '%52%'
+ 
+
+ 
+记录时间：2016-10-26 11:46:53,570 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:51:56,316 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:51:58,696 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:52:16,949 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:52:19,600 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:53:46,956 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 11:53:49,433 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 11:53:51,276 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 : showUserTable
+ 
+
+ 
+记录时间：2016-10-26 11:55:16,781 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:04:54,836 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:07:00,144 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:07:02,542 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:08:35,728 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:08:38,512 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:09:18,436 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:09:21,126 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:10:29,308 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:10:31,798 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:10:34,204 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 : showUserTable
+ 
+
+ 
+记录时间：2016-10-26 12:15:57,058 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:15:59,528 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:16:20,093 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:16:22,638 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:17:00,213 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:17:02,512 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:43:46,350 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:43:49,181 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:43:56,735 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%'
+ 
+
+ 
+记录时间：2016-10-26 12:45:28,290 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:45:31,222 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:45:37,264 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE>'2010-09-00' AND DATE<'2010-09-30'
+ 
+
+ 
+记录时间：2016-10-26 12:46:38,654 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:46:41,160 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:46:53,576 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE>'2010-09-00' AND DATE<'2010-09-30'
+ 
+
+ 
+记录时间：2016-10-26 12:47:52,633 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:47:55,058 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:48:08,545 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:48:11,094 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:48:16,664 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2010-09%'
+ 
+
+ 
+记录时间：2016-10-26 12:48:49,274 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:48:51,866 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:49:02,159 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2010-09%'
+ 
+
+ 
+记录时间：2016-10-26 12:49:26,667 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:49:28,896 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:49:33,056 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 12:52:52,311 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:52:54,954 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:53:15,814 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:53:18,155 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:54:15,899 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:54:18,244 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:54:44,843 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 12:54:47,310 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 12:54:51,368 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:02:37,857 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:02:40,865 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:02:44,896 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:03:19,771 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:03:22,040 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:03:25,792 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:09:15,859 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:09:19,190 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:09:23,040 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:12:03,934 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:12:06,389 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:12:12,200 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:19:01,277 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:19:03,560 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:19:09,416 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:20:13,661 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:20:16,067 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:20:16,879 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:20:21,201 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:21:02,170 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:21:05,925 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:21:11,438 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-09%'
+ 
+
+ 
+记录时间：2016-10-26 13:22:37,382 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:22:39,822 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:22:47,888 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:22:59,512 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:23:48,575 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:23:51,329 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:24:01,483 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:24:39,648 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:24:42,046 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:24:48,846 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:25:07,443 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:25:09,791 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:25:19,518 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:26:09,318 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:26:11,760 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:26:20,775 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:29:00,586 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:29:03,097 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:29:08,961 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:29:08,992 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:29:09,002 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%管道信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:29:09,016 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%报告%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:29:09,055 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:31:31,866 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:31:34,183 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:31:39,047 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:31:39,078 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:31:39,088 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%管道信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:31:39,919 
+线程ID:[9] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:31:42,051 
+线程ID:[9] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:32:16,387 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:32:18,879 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:32:25,415 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:32:25,450 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:32:25,460 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%管道信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:32:27,563 
+线程ID:[8] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:32:36,286 
+线程ID:[8] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:33:27,198 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:33:29,426 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:33:32,448 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:33:32,480 
+线程ID:[8] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:33:34,551 
+线程ID:[8] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:34:45,569 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:34:48,049 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:34:52,215 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:34:52,246 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:31,239 
+线程ID:[10] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:35:33,877 
+线程ID:[10] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:35:39,928 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:39,959 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:39,972 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%管道信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:40,014 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%报告%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:40,027 
+线程ID:[10] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:35:43,693 
+线程ID:[10] 
+日志级别：  INFO  
+描述：error openByTypeAndName wrong type
+ 
+
+ 
+记录时间：2016-10-26 13:36:56,363 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:36:59,069 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:37:03,631 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:37:03,662 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:37:03,673 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%管道信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:37:03,687 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%报告%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:42:37,969 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:42:40,392 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:44:24,863 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:44:27,511 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:47:15,658 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:47:18,103 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:47:29,127 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%影像%'
+ 
+
+ 
+记录时间：2016-10-26 13:50:45,440 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:50:47,894 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:50:50,514 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 : showUserTable
+ 
+
+ 
+记录时间：2016-10-26 13:53:19,065 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:53:21,744 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:53:45,775 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%地形信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:53:45,807 
+线程ID:[9] 
+日志级别：  INFO  
+描述：query all : DESC LIKE '%水库区信息%' AND DATE like '2016-10%'
+ 
+
+ 
+记录时间：2016-10-26 13:58:03,379 
+线程ID:[8] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:58:07,798 
+线程ID:[8] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 
+
+ 
+记录时间：2016-10-26 13:59:46,039 
+线程ID:[9] 
+日志级别：  INFO  
+描述：start application
+ 
+
+ 
+记录时间：2016-10-26 13:59:52,908 
+线程ID:[9] 
+日志级别：  INFO  
+描述：刘亚奇 login success
+ 

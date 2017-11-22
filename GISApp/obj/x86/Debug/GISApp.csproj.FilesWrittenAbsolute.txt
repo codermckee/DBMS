@@ -1,0 +1,14 @@
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.CoordinateCheck.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/MapControlApplication3.ListForm.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.Login.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.MainForm.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.Properties.Resources.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.QueryResult.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/WaterReservoir.SelectByAll.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/WaterReservoir.SelectByArea.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/WaterReservoir.FormByTime.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.TimeCheck.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.UserTableForm.resources
+/home/mckee/桌面/GISApp/GISApp/obj/x86/Debug/GISApp.exe
+/home/mckee/桌面/GISApp/GISApp/bin/Debug/log4net.dll
