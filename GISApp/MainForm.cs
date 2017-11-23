@@ -661,5 +661,23 @@ namespace GISApp
             //显示选择操作选项窗体
             formOptions.Show();
         }
+
+        private void 拓扑一致性检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TPYZX cc = new TPYZX();
+            cc.Show();
+        }
+
+        private void 位置精度检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PositionPrecision cc = new PositionPrecision();
+            cc.Show();
+        }
+
+        private void 表征精度检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BZJDJC cc = new BZJDJC();
+            cc.Show();
+        }
     }
 }
