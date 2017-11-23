@@ -117,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributionQuery.cs" />
+    <Compile Include="BZJDJC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BZJDJC.Designer.cs">
+      <DependentUpon>BZJDJC.cs</DependentUpon>
+    </Compile>
     <Compile Include="CoordinateCheck.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PositionPrecision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PositionPrecision.Designer.cs">
+      <DependentUpon>PositionPrecision.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryResult.cs">
@@ -206,12 +218,21 @@
     <Compile Include="TimeCheck.Designer.cs">
       <DependentUpon>TimeCheck.cs</DependentUpon>
     </Compile>
+    <Compile Include="TPYZX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TPYZX.Designer.cs">
+      <DependentUpon>TPYZX.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserTableForm.Designer.cs">
       <DependentUpon>UserTableForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BZJDJC.resx">
+      <DependentUpon>BZJDJC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CoordinateCheck.resx">
       <DependentUpon>CoordinateCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +261,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PositionPrecision.resx">
+      <DependentUpon>PositionPrecision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -264,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TimeCheck.resx">
       <DependentUpon>TimeCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TPYZX.resx">
+      <DependentUpon>TPYZX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserTableForm.resx">
       <DependentUpon>UserTableForm.cs</DependentUpon>

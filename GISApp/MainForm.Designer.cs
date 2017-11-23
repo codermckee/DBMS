@@ -50,6 +50,9 @@ namespace GISApp
             this.范围查寻ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.联合查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.属性查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.空间查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.图形查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.地图选择集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入CADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入影像ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +63,8 @@ namespace GISApp
             this.现势性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.坐标检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.属性检查ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.选择操作项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
             this.axTOCControl1 = new ESRI.ArcGIS.Controls.AxTOCControl();
             this.axLicenseControl1 = new ESRI.ArcGIS.Controls.AxLicenseControl();
@@ -67,12 +72,10 @@ namespace GISApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBarXY = new System.Windows.Forms.ToolStripStatusLabel();
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
-            this.空间查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.图形查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.地图选择集ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.拓扑一致性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.位置精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.表征精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
-            this.选择操作项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
@@ -96,7 +99,7 @@ namespace GISApp
             this.选择操作项ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(859, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(644, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -229,6 +232,26 @@ namespace GISApp
             this.属性查询ToolStripMenuItem.Text = "属性查询";
             this.属性查询ToolStripMenuItem.Click += new System.EventHandler(this.属性查询ToolStripMenuItem_Click);
             // 
+            // 空间查询ToolStripMenuItem
+            // 
+            this.空间查询ToolStripMenuItem.Name = "空间查询ToolStripMenuItem";
+            this.空间查询ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.空间查询ToolStripMenuItem.Text = "空间查询";
+            this.空间查询ToolStripMenuItem.Click += new System.EventHandler(this.空间查询ToolStripMenuItem_Click);
+            // 
+            // 图形查询ToolStripMenuItem
+            // 
+            this.图形查询ToolStripMenuItem.Name = "图形查询ToolStripMenuItem";
+            this.图形查询ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.图形查询ToolStripMenuItem.Text = "图形查询";
+            // 
+            // 地图选择集ToolStripMenuItem
+            // 
+            this.地图选择集ToolStripMenuItem.Name = "地图选择集ToolStripMenuItem";
+            this.地图选择集ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.地图选择集ToolStripMenuItem.Text = "地图选择集";
+            this.地图选择集ToolStripMenuItem.Click += new System.EventHandler(this.地图选择集ToolStripMenuItem_Click);
+            // 
             // 导入ToolStripMenuItem
             // 
             this.导入ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -282,7 +305,10 @@ namespace GISApp
             this.质量控制ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.现势性检查ToolStripMenuItem,
             this.坐标检查ToolStripMenuItem,
-            this.属性检查ToolStripMenuItem1});
+            this.属性检查ToolStripMenuItem1,
+            this.拓扑一致性检查ToolStripMenuItem,
+            this.位置精度检查ToolStripMenuItem,
+            this.表征精度检查ToolStripMenuItem});
             this.质量控制ToolStripMenuItem.Name = "质量控制ToolStripMenuItem";
             this.质量控制ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.质量控制ToolStripMenuItem.Text = "质量控制";
@@ -292,23 +318,39 @@ namespace GISApp
             // 现势性检查ToolStripMenuItem
             // 
             this.现势性检查ToolStripMenuItem.Name = "现势性检查ToolStripMenuItem";
-            this.现势性检查ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.现势性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.现势性检查ToolStripMenuItem.Text = "现势性检查";
             this.现势性检查ToolStripMenuItem.Click += new System.EventHandler(this.现势性检查ToolStripMenuItem_Click);
             // 
             // 坐标检查ToolStripMenuItem
             // 
             this.坐标检查ToolStripMenuItem.Name = "坐标检查ToolStripMenuItem";
-            this.坐标检查ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.坐标检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.坐标检查ToolStripMenuItem.Text = "坐标检查";
             this.坐标检查ToolStripMenuItem.Click += new System.EventHandler(this.坐标检查ToolStripMenuItem_Click);
             // 
             // 属性检查ToolStripMenuItem1
             // 
             this.属性检查ToolStripMenuItem1.Name = "属性检查ToolStripMenuItem1";
-            this.属性检查ToolStripMenuItem1.Size = new System.Drawing.Size(136, 22);
+            this.属性检查ToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.属性检查ToolStripMenuItem1.Text = "属性检查";
             this.属性检查ToolStripMenuItem1.Click += new System.EventHandler(this.属性检查ToolStripMenuItem1_Click);
+            // 
+            // 统计ToolStripMenuItem
+            // 
+            this.统计ToolStripMenuItem.Name = "统计ToolStripMenuItem";
+            this.统计ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.统计ToolStripMenuItem.Text = "统计";
+            this.统计ToolStripMenuItem.Visible = false;
+            this.统计ToolStripMenuItem.Click += new System.EventHandler(this.统计ToolStripMenuItem_Click_1);
+            // 
+            // 选择操作项ToolStripMenuItem
+            // 
+            this.选择操作项ToolStripMenuItem.Name = "选择操作项ToolStripMenuItem";
+            this.选择操作项ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.选择操作项ToolStripMenuItem.Text = "选择操作项";
+            this.选择操作项ToolStripMenuItem.Visible = false;
+            this.选择操作项ToolStripMenuItem.Click += new System.EventHandler(this.选择操作项ToolStripMenuItem_Click);
             // 
             // axToolbarControl1
             // 
@@ -316,7 +358,7 @@ namespace GISApp
             this.axToolbarControl1.Location = new System.Drawing.Point(0, 25);
             this.axToolbarControl1.Name = "axToolbarControl1";
             this.axToolbarControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axToolbarControl1.OcxState")));
-            this.axToolbarControl1.Size = new System.Drawing.Size(859, 28);
+            this.axToolbarControl1.Size = new System.Drawing.Size(644, 28);
             this.axToolbarControl1.TabIndex = 3;
             this.axToolbarControl1.OnMouseDown += new ESRI.ArcGIS.Controls.IToolbarControlEvents_Ax_OnMouseDownEventHandler(this.axToolbarControl1_OnMouseDown);
             // 
@@ -326,7 +368,7 @@ namespace GISApp
             this.axTOCControl1.Location = new System.Drawing.Point(3, 53);
             this.axTOCControl1.Name = "axTOCControl1";
             this.axTOCControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axTOCControl1.OcxState")));
-            this.axTOCControl1.Size = new System.Drawing.Size(235, 466);
+            this.axTOCControl1.Size = new System.Drawing.Size(235, 356);
             this.axTOCControl1.TabIndex = 4;
             // 
             // axLicenseControl1
@@ -342,7 +384,7 @@ namespace GISApp
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 53);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 488);
+            this.splitter1.Size = new System.Drawing.Size(3, 378);
             this.splitter1.TabIndex = 6;
             this.splitter1.TabStop = false;
             // 
@@ -350,9 +392,9 @@ namespace GISApp
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusBarXY});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 519);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 409);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(856, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(641, 22);
             this.statusStrip1.Stretch = false;
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusBar1";
@@ -374,33 +416,26 @@ namespace GISApp
             this.skinEngine1.SerialNumber = "";
             this.skinEngine1.SkinFile = null;
             // 
-            // 空间查询ToolStripMenuItem
+            // 拓扑一致性检查ToolStripMenuItem
             // 
-            this.空间查询ToolStripMenuItem.Name = "空间查询ToolStripMenuItem";
-            this.空间查询ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.空间查询ToolStripMenuItem.Text = "空间查询";
-            this.空间查询ToolStripMenuItem.Click += new System.EventHandler(this.空间查询ToolStripMenuItem_Click);
+            this.拓扑一致性检查ToolStripMenuItem.Name = "拓扑一致性检查ToolStripMenuItem";
+            this.拓扑一致性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.拓扑一致性检查ToolStripMenuItem.Text = "拓扑一致性检查";
+            this.拓扑一致性检查ToolStripMenuItem.Click += new System.EventHandler(this.拓扑一致性检查ToolStripMenuItem_Click);
             // 
-            // 图形查询ToolStripMenuItem
+            // 位置精度检查ToolStripMenuItem
             // 
-            this.图形查询ToolStripMenuItem.Name = "图形查询ToolStripMenuItem";
-            this.图形查询ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.图形查询ToolStripMenuItem.Text = "图形查询";
+            this.位置精度检查ToolStripMenuItem.Name = "位置精度检查ToolStripMenuItem";
+            this.位置精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.位置精度检查ToolStripMenuItem.Text = "位置精度检查";
+            this.位置精度检查ToolStripMenuItem.Click += new System.EventHandler(this.位置精度检查ToolStripMenuItem_Click);
             // 
-            // 地图选择集ToolStripMenuItem
+            // 表征精度检查ToolStripMenuItem
             // 
-            this.地图选择集ToolStripMenuItem.Name = "地图选择集ToolStripMenuItem";
-            this.地图选择集ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.地图选择集ToolStripMenuItem.Text = "地图选择集";
-            this.地图选择集ToolStripMenuItem.Click += new System.EventHandler(this.地图选择集ToolStripMenuItem_Click);
-            // 
-            // 统计ToolStripMenuItem
-            // 
-            this.统计ToolStripMenuItem.Name = "统计ToolStripMenuItem";
-            this.统计ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.统计ToolStripMenuItem.Text = "统计";
-            this.统计ToolStripMenuItem.Visible = false;
-            this.统计ToolStripMenuItem.Click += new System.EventHandler(this.统计ToolStripMenuItem_Click_1);
+            this.表征精度检查ToolStripMenuItem.Name = "表征精度检查ToolStripMenuItem";
+            this.表征精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.表征精度检查ToolStripMenuItem.Text = "表征精度检查";
+            this.表征精度检查ToolStripMenuItem.Click += new System.EventHandler(this.表征精度检查ToolStripMenuItem_Click);
             // 
             // axMapControl1
             // 
@@ -408,24 +443,16 @@ namespace GISApp
             this.axMapControl1.Location = new System.Drawing.Point(238, 53);
             this.axMapControl1.Name = "axMapControl1";
             this.axMapControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMapControl1.OcxState")));
-            this.axMapControl1.Size = new System.Drawing.Size(621, 466);
+            this.axMapControl1.Size = new System.Drawing.Size(406, 356);
             this.axMapControl1.TabIndex = 2;
             this.axMapControl1.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl1_OnMouseMove);
             this.axMapControl1.OnMapReplaced += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMapReplacedEventHandler(this.axMapControl1_OnMapReplaced);
-            // 
-            // 选择操作项ToolStripMenuItem
-            // 
-            this.选择操作项ToolStripMenuItem.Name = "选择操作项ToolStripMenuItem";
-            this.选择操作项ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
-            this.选择操作项ToolStripMenuItem.Text = "选择操作项";
-            this.选择操作项ToolStripMenuItem.Visible = false;
-            this.选择操作项ToolStripMenuItem.Click += new System.EventHandler(this.选择操作项ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 541);
+            this.ClientSize = new System.Drawing.Size(644, 431);
             this.Controls.Add(this.axLicenseControl1);
             this.Controls.Add(this.axMapControl1);
             this.Controls.Add(this.axTOCControl1);
@@ -493,6 +520,9 @@ namespace GISApp
         private System.Windows.Forms.ToolStripMenuItem 地图选择集ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 统计ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 选择操作项ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 拓扑一致性检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 位置精度检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 表征精度检查ToolStripMenuItem;
     }
 }
 
