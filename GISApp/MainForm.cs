@@ -661,5 +661,10 @@ namespace GISApp
             //显示选择操作选项窗体
             formOptions.Show();
         }
+
+        private void 参考系统一致性ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ///TEST
+        }
     }
 }
