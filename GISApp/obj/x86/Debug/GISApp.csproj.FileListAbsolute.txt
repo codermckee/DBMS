@@ -79,3 +79,5 @@ G:\研一\空间数据管理\程序\share\GISApp\obj\x86\Debug\WaterReservoir.Fo
 G:\研一\空间数据管理\程序\share\GISApp\obj\x86\Debug\GISApp.TimeCheck.resources
 G:\研一\空间数据管理\程序\share\GISApp\obj\x86\Debug\GISApp.UserTableForm.resources
 G:\研一\空间数据管理\程序\share\GISApp\obj\x86\Debug\GISApp.csproj.GenerateResource.Cache
+G:\研一\空间数据管理\程序\share\GISApp\bin\Debug\Microsoft.Office.Tools.Excel.v9.0.dll
+G:\研一\空间数据管理\程序\share\GISApp\bin\Debug\Microsoft.Office.Interop.SmartTag.dll

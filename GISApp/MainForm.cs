@@ -20,6 +20,8 @@ using ESRI.ArcGIS.DataSourcesFile;
 using MapControlApplication3;
 using WaterReservoir;
 using QueryAndStatistics;
+using ESRI.ArcGIS.Geometry;
+using System.Collections.Generic;
 
 namespace GISApp
 {
@@ -126,7 +128,7 @@ namespace GISApp
             {
                 //enable the Save manu and write the doc name to the statusbar
                 menuSaveDoc.Enabled = true;
-                statusBarXY.Text = Path.GetFileName(m_mapDocumentName);
+                statusBarXY.Text = System.IO.Path.GetFileName(m_mapDocumentName);
             }
         }
 
@@ -150,6 +152,7 @@ namespace GISApp
                     质量控制ToolStripMenuItem.Visible = true;
                     统计ToolStripMenuItem.Visible = true;
                     选择操作项ToolStripMenuItem.Visible = true;
+                    栅格数据检查ToolStripMenuItem.Visible = true;
                     //入库ToolStripMenuItem.Visible = true;
                     if (DBHelper.userType.Equals("管理员"))
                     {
@@ -661,10 +664,433 @@ namespace GISApp
             //显示选择操作选项窗体
             formOptions.Show();
         }
-
+       
+       
+        string pFullPath = System.Environment.CurrentDirectory + "\\data\\栅格数据设计\\YGYX.gdb";
         private void 参考系统一致性ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ///TEST
+            IWorkspaceFactory pFileGDBWorkspaceFactory; 
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesGDB;
+
+            //获取工作空间
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(pFullPath, 0);
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            //将Enum数据集中的数据一个个读到DataSet中
+            IDataset pDataset = pEnumDataset.Next();
+
+            DataTable SpatialRefTable = new DataTable();
+
+            SpatialRefTable.Columns.Add(new DataColumn("影像名称", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("数据类型", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("所在数据库", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("名称格式检查", typeof(string)));
+
+            //判断数据集是否有数据
+            while (pDataset != null)
+            {
+               
+                
+                if (pDataset is IRasterDataset) //栅格数据集
+                {
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+
+                    DataRow dr = SpatialRefTable.NewRow();
+                    dr["影像名称"] = pDataset.Name.ToString();
+                    dr["数据类型"] = "File GeoDatabase Raster Dataset";
+                    dr["所在数据库"] = pFullPath;
+                    string rastername = pDataset.Name.ToString();
+                    string[] strArray = rastername.Split('_');
+                    if (strArray[0]=="GF1"&& strArray[1].Length==10)
+                    {
+                        dr["名称格式检查"] = "√";
+
+                    }
+                    else
+                    { 
+                        dr["名称格式检查"] = "×";
+                    }
+                    SpatialRefTable.Rows.Add(dr);
+                    //IRasterPyramid3 pRasPyrmid;
+                    //pRasPyrmid = pRasterDataset as IRasterPyramid3;
+                    //if (pRasPyrmid != null)
+                    //{
+                    //    if (!(pRasPyrmid.Present))
+                    //    {
+                    //        pRasPyrmid.Create(); //创建金字塔
+                    //    }
+                    //}
+                    IRasterLayer pRasterLayer = new RasterLayerClass();
+                    pRasterLayer.CreateFromDataset(pRasterDataset);
+                    ILayer pLayer = pRasterLayer as ILayer;
+                   
+
+                    //axMapControl1.AddLayer(pLayer, 0);
+                }
+                pDataset = pEnumDataset.Next();
+            }
+           // ExportExcel(SpatialRefTable);
+            //弹出显示框
+            TimeCheck tc = new TimeCheck();
+            tc.Text = "格式一致性";
+            tc.dataGridView1.DataSource = SpatialRefTable;
+            tc.dataGridView1.Columns[1].Width = 200;
+            tc.dataGridView1.Columns[2].Width = 300;
+            tc.Show();
         }
+        public void ExportExcel(DataTable myDGV)
+        {
+            string saveFileName = "";
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.DefaultExt = "xls";
+            saveDialog.Filter = "Excel文件|*.xls";
+            saveDialog.ShowDialog();
+            saveFileName = saveDialog.FileName;
+            if (saveFileName.IndexOf(":") < 0) return; //被点了取消   
+
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+            if (xlApp == null)
+            {
+                MessageBox.Show("无法创建Excel对象，可能您的机子未安装Excel");
+                return;
+            }
+
+            Microsoft.Office.Interop.Excel.Workbooks workbooks = xlApp.Workbooks;
+            Microsoft.Office.Interop.Excel.Workbook workbook = workbooks.Add(Microsoft.Office.Interop.Excel.XlWBATemplate.xlWBATWorksheet);
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = (Microsoft.Office.Interop.Excel.Worksheet)workbook.Worksheets[1];//取得sheet1  
+
+            //写入标题  
+            for (int i = 0; i < myDGV.Columns.Count; i++)
+            {
+                worksheet.Columns.Cells[1, i + 1] = myDGV.Columns[i].ColumnName;
+            }
+            //写入数值  
+            for (int r = 0; r < myDGV.Rows.Count; r++)
+            {
+                for (int i = 0; i < myDGV.Columns.Count; i++)
+                {
+                    worksheet.Cells[r + 2, i + 1] = myDGV.Rows[r][i].ToString();
+                }
+                System.Windows.Forms.Application.DoEvents();
+            }
+
+            worksheet.Columns.EntireColumn.AutoFit();//列宽自适应  
+
+            if (saveFileName != "")
+            {
+                try
+                {
+                    workbook.Saved = true;
+                    workbook.SaveCopyAs(saveFileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("导出文件时出错,文件可能正被打开！\n" + ex.Message);
+                }
+                xlApp.Quit();
+                GC.Collect();//强行销毁   
+                MessageBox.Show("资料保存成功", "提示", MessageBoxButtons.OK);
+            }
+        }
+
+        private void 数学精度检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IWorkspaceFactory pFileGDBWorkspaceFactory;
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesGDB;
+
+            
+            //获取工作空间
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(pFullPath, 0);
+            //  AddAllDataset(pWorkspace, axMapControl1);
+
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            //将Enum数据集中的数据一个个读到DataSet中
+            IDataset pDataset = pEnumDataset.Next();
+
+            DataTable SpatialRefTable = new DataTable();
+
+            SpatialRefTable.Columns.Add(new DataColumn("影像名称", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("地理坐标系统", typeof(string)));
+          
+            SpatialRefTable.Columns.Add(new DataColumn("坐标系检查", typeof(string)));
+           
+            //判断数据集是否有数据
+            while (pDataset != null)
+            {
+
+                if (pDataset is IRasterDataset) //栅格数据集
+                {
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+                    
+                    DataRow dr = SpatialRefTable.NewRow();
+                    dr["影像名称"] = pDataset.Name.ToString();
+                    dr["地理坐标系统"] = spatialref;
+
+
+                    //string rasterformat = pRasterDataset.Format.ToString();
+                    if (spatialref == "Shenzhen_Local")
+                    {
+                        dr["坐标系检查"] = "√";
+
+                    }
+                    else
+                    {
+                        dr["坐标系检查"] = "×";
+                    }
+                  
+                    SpatialRefTable.Rows.Add(dr);
+                    //IRasterPyramid3 pRasPyrmid;
+                    //pRasPyrmid = pRasterDataset as IRasterPyramid3;
+                    //if (pRasPyrmid != null)
+                    //{
+                    //    if (!(pRasPyrmid.Present))
+                    //    {
+                    //        pRasPyrmid.Create(); //创建金字塔
+                    //    }
+                    //}
+                    IRasterLayer pRasterLayer = new RasterLayerClass();
+                    pRasterLayer.CreateFromDataset(pRasterDataset);
+                    ILayer pLayer = pRasterLayer as ILayer;
+
+                    IRasterProps rasterProps = (IRasterProps)pRasterLayer.Raster;
+                    double dX = rasterProps.MeanCellSize().X;
+                    //axMapControl1.AddLayer(pLayer, 0);
+                }
+                pDataset = pEnumDataset.Next();
+            }
+            // ExportExcel(SpatialRefTable);
+            //弹出显示框
+            TimeCheck tc = new TimeCheck();
+            tc.Text = "数学精度检查";
+            tc.dataGridView1.DataSource = SpatialRefTable;
+            tc.dataGridView1.Columns[1].Width = 200;
+            tc.dataGridView1.Columns[2].Width = 300;
+            tc.Show();
+        }
+
+        private void 影像质量检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IWorkspaceFactory pFileGDBWorkspaceFactory;
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesGDB;
+
+          
+            //获取工作空间
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(pFullPath, 0);
+            //  AddAllDataset(pWorkspace, axMapControl1);
+
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            //将Enum数据集中的数据一个个读到DataSet中
+            IDataset pDataset = pEnumDataset.Next();
+
+            DataTable SpatialRefTable = new DataTable();
+
+            SpatialRefTable.Columns.Add(new DataColumn("影像名称", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("影像分辨率", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("影像分辨率检查", typeof(string)));
+
+            //判断数据集是否有数据
+            while (pDataset != null)
+            {
+
+                if (pDataset is IRasterDataset) //栅格数据集
+                {
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+
+                    DataRow dr = SpatialRefTable.NewRow();
+                    dr["影像名称"] = pDataset.Name.ToString();
+                    IRasterLayer pRasterLayer = new RasterLayerClass();
+                    pRasterLayer.CreateFromDataset(pRasterDataset);
+
+
+                    IRasterProps rasterProps = (IRasterProps)pRasterLayer.Raster;
+                    double dX = rasterProps.MeanCellSize().X;
+                    double dY = rasterProps.MeanCellSize().Y;
+                    dr["影像分辨率"] = "(" + dX.ToString() + "*" + dX.ToString() + ")";
+                    //string rasterformat = pRasterDataset.Format.ToString();
+                    if (dX == 20&&dY==20)
+                    {
+                        dr["影像分辨率检查"] = "√";
+
+                    }
+                    else
+                    {
+                        dr["影像分辨率检查"] = "×";
+                    }
+
+                    SpatialRefTable.Rows.Add(dr);
+                  
+
+                }
+                pDataset = pEnumDataset.Next();
+            }
+            // ExportExcel(SpatialRefTable);
+            //弹出显示框
+            TimeCheck tc = new TimeCheck();
+            tc.Text = "影像质量检查";
+            tc.dataGridView1.DataSource = SpatialRefTable;
+            tc.dataGridView1.Columns[1].Width = 200;
+            tc.dataGridView1.Columns[2].Width = 300;
+            tc.Show();
+        }
+
+
+        private void 完备性检查ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IWorkspaceFactory pFileGDBWorkspaceFactory;
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesGDB;
+
+            //获取工作空间
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(pFullPath, 0);
+            //  AddAllDataset(pWorkspace, axMapControl1);
+
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            //将Enum数据集中的数据一个个读到DataSet中
+            IDataset pDataset = pEnumDataset.Next();
+
+
+            DataTable SpatialRefTable = new DataTable();
+            SpatialRefTable.Columns.Add(new DataColumn("未分幅影像名称", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("分幅数量", typeof(int)));
+            SpatialRefTable.Columns.Add(new DataColumn("分幅影像完备性检查", typeof(string)));
+            int rastercount=0;
+            string rastername = "a";
+            List<string> testList = new List<string>();
+            //判断数据集是否有数据
+            while (pDataset != null)
+            {
+                if (pDataset is IRasterDataset) //栅格数据集
+                {
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+
+                    
+                    testList.Add(pDataset.Name.ToString());
+               
+                }
+                pDataset = pEnumDataset.Next();
+            }
+            testList.Sort();
+            
+            for (int i = 0;i< testList.Count;i++)
+            {
+                DataRow dr = SpatialRefTable.NewRow();
+                if (rastername != testList[i].Substring(0, testList[i].Length - 1))
+                {
+                    rastername = testList[i].Substring(0, testList[i].Length - 1);
+                    dr["未分幅影像名称"] = rastername;
+                    dr["分幅数量"] = rastercount;
+                    if(rastercount==4)
+                    {
+                        dr["分幅影像完备性检查"] = "√";
+                        SpatialRefTable.Rows.Add(dr);
+                    }
+                    else if(rastercount == 3)
+                    {
+                        dr["分幅影像完备性检查"] = "×";
+                        SpatialRefTable.Rows.Add(dr);
+                    }
+                   
+                  
+                    rastercount = 1;
+                }
+                else
+                {
+                    rastercount = rastercount + 1;
+                }
+            }
+            
+            // ExportExcel(SpatialRefTable);
+            //弹出显示框
+            TimeCheck tc = new TimeCheck();
+            tc.Text = "影像完备性检查";
+            tc.dataGridView1.DataSource = SpatialRefTable;
+            tc.dataGridView1.Columns[1].Width = 200;
+            tc.dataGridView1.Columns[2].Width = 300;
+            tc.Show();
+        }
+
+        private void 现势性检查ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            IWorkspaceFactory pFileGDBWorkspaceFactory;
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass(); //using ESRI.ArcGIS.DataSourcesGDB;
+
+            //ClearAllData();    //新增删除数据
+  
+            //获取工作空间
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(pFullPath, 0);
+            //  AddAllDataset(pWorkspace, axMapControl1);
+
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            //将Enum数据集中的数据一个个读到DataSet中
+            IDataset pDataset = pEnumDataset.Next();
+
+            DataTable SpatialRefTable = new DataTable();
+
+            SpatialRefTable.Columns.Add(new DataColumn("影像名称", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("影像拍摄时间", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("时间现势性检查", typeof(string)));
+
+            //判断数据集是否有数据
+            while (pDataset != null)
+            {
+
+                if (pDataset is IRasterDataset) //栅格数据集
+                {
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+                    string rastername = pDataset.Name.ToString();
+                    string[] strArray = rastername.Split('_');
+
+                    DataRow dr = SpatialRefTable.NewRow();
+                    dr["影像名称"] = pDataset.Name.ToString();
+                    dr["影像拍摄时间"] = strArray[1].Substring(0,8);
+                    IRasterLayer pRasterLayer = new RasterLayerClass();
+                    pRasterLayer.CreateFromDataset(pRasterDataset);
+                    if(int.Parse(strArray[1].Substring(0, 8))<20170000&& int.Parse(strArray[1].Substring(0, 8))>20120000)
+                    {
+                        dr["时间现势性检查"] = "√";
+                    }
+                    else
+                    {
+                        dr["时间现势性检查"] = "×";
+                    }
+                    SpatialRefTable.Rows.Add(dr);
+
+                }
+                pDataset = pEnumDataset.Next();
+            }
+            // ExportExcel(SpatialRefTable);
+            //弹出显示框
+            TimeCheck tc = new TimeCheck();
+            tc.Text = "影像质量检查";
+            tc.dataGridView1.DataSource = SpatialRefTable;
+            tc.dataGridView1.Columns[1].Width = 200;
+            tc.dataGridView1.Columns[2].Width = 300;
+            tc.Show();
+        }
+
+       
     }
 }
