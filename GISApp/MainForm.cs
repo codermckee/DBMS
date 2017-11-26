@@ -14,7 +14,7 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
-//using ESRI.ArcGIS.Geometry;
+using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.Geodatabase;
 using ESRI.ArcGIS.DataSourcesFile;
 using MapControlApplication3;
@@ -126,7 +126,7 @@ namespace GISApp
             {
                 //enable the Save manu and write the doc name to the statusbar
                 menuSaveDoc.Enabled = true;
-                statusBarXY.Text = Path.GetFileName(m_mapDocumentName);
+                statusBarXY.Text = System.IO.Path.GetFileName(m_mapDocumentName);
             }
         }
 
@@ -281,83 +281,63 @@ namespace GISApp
         {
 
         }
-
+        string Path = System.Environment.CurrentDirectory + "\\data\\栅格数据设计\\YGYX.gdb";
         private void 现势性检查ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DBHelper.VEC_TABLE == null || DBHelper.RAS_TABLE == null)
-            {
-                MessageBox.Show("还未初始化");
-                return;
-            }
-            IName vec_Name = DBHelper.VEC_TABLE as IName;
-            IName ras_Name = DBHelper.RAS_TABLE as IName;
-            ITable vec_table = vec_Name.Open() as ITable;
-            ITable ras_table = ras_Name.Open() as ITable;
+            IWorkspaceFactory pFileGDBWorkspaceFactory;
+            pFileGDBWorkspaceFactory = new FileGDBWorkspaceFactoryClass();
+            IWorkspace pWorkspace = pFileGDBWorkspaceFactory.OpenFromFile(Path, 0);
+            IEnumDataset pEnumDataset = pWorkspace.get_Datasets(ESRI.ArcGIS.Geodatabase.esriDatasetType.esriDTAny);
+            pEnumDataset.Reset();
+            IDataset pDataset = pEnumDataset.Next();
+            DataTable SpatialRefTable = new DataTable();
 
-            DataTable pTable = new DataTable();
-            //设置自增列
-            DataColumn autoIncrease = new DataColumn("序号",typeof(int));
-            autoIncrease.AutoIncrement = true;
-            autoIncrease.AutoIncrementStep = 1;
-            autoIncrease.AutoIncrementSeed = 1;
-            //添加字段
-            pTable.Columns.Add(autoIncrease);
-            pTable.Columns.Add("NAME", typeof(String));
-            pTable.Columns.Add("DATE", typeof(String));
+            SpatialRefTable.Columns.Add(new DataColumn("影像名称",typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("影像拍摄时间", typeof(string)));
+            SpatialRefTable.Columns.Add(new DataColumn("时间现势性检查", typeof(string)));
 
-            //vec_Table
-            ICursor vec_Cursor = vec_table.Search(null, false);
-            IRow vec_Rrow = vec_Cursor.NextRow();
-            while (vec_Rrow != null)
+            //判断数据集是否有数据
+            while (pDataset != null)
             {
-                DataRow pRow = pTable.NewRow();
-                //string[] StrRow = new string[pRrow.Fields.FieldCount];
-                for (int i = 0; i < vec_Rrow.Fields.FieldCount; i++)
+
+                if (pDataset is IRasterDataset) //栅格数据集
                 {
-                    if (vec_Rrow.Fields.get_Field(i).Name.Equals("NAME"))
-                    {
-                        pRow["NAME"] = vec_Rrow.get_Value(i).ToString();
-                    }
-                    if (vec_Rrow.Fields.get_Field(i).Name.Equals("DATE"))
-                    {
-                        pRow["DATE"] = vec_Rrow.get_Value(i).ToString();
-                    }
-                    //StrRow[i] = pRrow.get_Value(i).ToString();
-                }
-                //pRow.ItemArray = StrRow;
-                pTable.Rows.Add(pRow);
-                vec_Rrow = vec_Cursor.NextRow();
-            }
+                    IRasterWorkspaceEx pRasterWorkspace = (IRasterWorkspaceEx)pWorkspace;
+                    IRasterDataset pRasterDataset = pRasterWorkspace.OpenRasterDataset(pDataset.Name);
+                    //影像金字塔判断与创建
+                    ISpatialReference pSpatialRef = (pRasterDataset as IGeoDataset).SpatialReference;
+                    string spatialref = pSpatialRef.Name.ToString();
+                    string rastername = pDataset.Name.ToString();
+                    string[] strArray = rastername.Split('_');
 
-            //ras_Table
-            ICursor ras_Cursor = ras_table.Search(null, false);
-            IRow ras_Rrow = ras_Cursor.NextRow();
-            while (ras_Rrow != null)
-            {
-                DataRow pRow = pTable.NewRow();
-                //string[] StrRow = new string[pRrow.Fields.FieldCount];
-                for (int i = 0; i < ras_Rrow.Fields.FieldCount; i++)
-                {
-                    if (ras_Rrow.Fields.get_Field(i).Name.Equals("NAME"))
+                    DataRow dr = SpatialRefTable.NewRow();
+                    dr["影像名称"] = pDataset.Name.ToString();
+                    dr["影像拍摄时间"] = strArray[1].Substring(0, 8);
+                    IRasterLayer pRasterLayer = new RasterLayerClass();
+                    pRasterLayer.CreateFromDataset(pRasterDataset);
+                    if (int.Parse(strArray[1].Substring(0, 8)) < 20170000 && int.Parse(strArray[1].Substring(0, 8)) > 20120000)
                     {
-                        pRow["NAME"] = ras_Rrow.get_Value(i).ToString();
+                        dr["时间现势性检查"] = "√";
                     }
-                    if (ras_Rrow.Fields.get_Field(i).Name.Equals("DATE"))
+                    else
                     {
-                        pRow["DATE"] = ras_Rrow.get_Value(i).ToString();
+                        dr["时间现势性检查"] = "×";
                     }
-                    //StrRow[i] = pRrow.get_Value(i).ToString();
+                    SpatialRefTable.Rows.Add(dr);
+
                 }
-                //pRow.ItemArray = StrRow;
-                pTable.Rows.Add(pRow);
-                ras_Rrow = ras_Cursor.NextRow();
+                pDataset = pEnumDataset.Next();
             }
+            // ExportExcel(SpatialRefTable);
             //弹出显示框
             TimeCheck tc = new TimeCheck();
-            tc.dataGridView1.DataSource = pTable;
+            tc.Text = "影像质量检查";
+            tc.dataGridView1.DataSource = SpatialRefTable;
             tc.dataGridView1.Columns[1].Width = 200;
             tc.dataGridView1.Columns[2].Width = 300;
             tc.Show();
+
+  
         }
 
         private void 坐标检查ToolStripMenuItem_Click(object sender, EventArgs e)
