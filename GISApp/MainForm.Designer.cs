@@ -63,6 +63,9 @@ namespace GISApp
             this.现势性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.坐标检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.属性检查ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.拓扑一致性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.位置精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.表征精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.选择操作项ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.axToolbarControl1 = new ESRI.ArcGIS.Controls.AxToolbarControl();
@@ -72,10 +75,11 @@ namespace GISApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBarXY = new System.Windows.Forms.ToolStripStatusLabel();
             this.skinEngine1 = new Sunisoft.IrisSkin.SkinEngine();
-            this.拓扑一致性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.位置精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.表征精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.axMapControl1 = new ESRI.ArcGIS.Controls.AxMapControl();
+            this.数学精度检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.影像质量检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.完备性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.格式一致性检查ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axTOCControl1)).BeginInit();
@@ -308,7 +312,11 @@ namespace GISApp
             this.属性检查ToolStripMenuItem1,
             this.拓扑一致性检查ToolStripMenuItem,
             this.位置精度检查ToolStripMenuItem,
-            this.表征精度检查ToolStripMenuItem});
+            this.表征精度检查ToolStripMenuItem,
+            this.数学精度检查ToolStripMenuItem,
+            this.影像质量检查ToolStripMenuItem,
+            this.完备性检查ToolStripMenuItem,
+            this.格式一致性检查ToolStripMenuItem});
             this.质量控制ToolStripMenuItem.Name = "质量控制ToolStripMenuItem";
             this.质量控制ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.质量控制ToolStripMenuItem.Text = "质量控制";
@@ -335,6 +343,27 @@ namespace GISApp
             this.属性检查ToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.属性检查ToolStripMenuItem1.Text = "属性检查";
             this.属性检查ToolStripMenuItem1.Click += new System.EventHandler(this.属性检查ToolStripMenuItem1_Click);
+            // 
+            // 拓扑一致性检查ToolStripMenuItem
+            // 
+            this.拓扑一致性检查ToolStripMenuItem.Name = "拓扑一致性检查ToolStripMenuItem";
+            this.拓扑一致性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.拓扑一致性检查ToolStripMenuItem.Text = "拓扑一致性检查";
+            this.拓扑一致性检查ToolStripMenuItem.Click += new System.EventHandler(this.拓扑一致性检查ToolStripMenuItem_Click);
+            // 
+            // 位置精度检查ToolStripMenuItem
+            // 
+            this.位置精度检查ToolStripMenuItem.Name = "位置精度检查ToolStripMenuItem";
+            this.位置精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.位置精度检查ToolStripMenuItem.Text = "位置精度检查";
+            this.位置精度检查ToolStripMenuItem.Click += new System.EventHandler(this.位置精度检查ToolStripMenuItem_Click);
+            // 
+            // 表征精度检查ToolStripMenuItem
+            // 
+            this.表征精度检查ToolStripMenuItem.Name = "表征精度检查ToolStripMenuItem";
+            this.表征精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.表征精度检查ToolStripMenuItem.Text = "表征精度检查";
+            this.表征精度检查ToolStripMenuItem.Click += new System.EventHandler(this.表征精度检查ToolStripMenuItem_Click);
             // 
             // 统计ToolStripMenuItem
             // 
@@ -416,27 +445,6 @@ namespace GISApp
             this.skinEngine1.SerialNumber = "";
             this.skinEngine1.SkinFile = null;
             // 
-            // 拓扑一致性检查ToolStripMenuItem
-            // 
-            this.拓扑一致性检查ToolStripMenuItem.Name = "拓扑一致性检查ToolStripMenuItem";
-            this.拓扑一致性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.拓扑一致性检查ToolStripMenuItem.Text = "拓扑一致性检查";
-            this.拓扑一致性检查ToolStripMenuItem.Click += new System.EventHandler(this.拓扑一致性检查ToolStripMenuItem_Click);
-            // 
-            // 位置精度检查ToolStripMenuItem
-            // 
-            this.位置精度检查ToolStripMenuItem.Name = "位置精度检查ToolStripMenuItem";
-            this.位置精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.位置精度检查ToolStripMenuItem.Text = "位置精度检查";
-            this.位置精度检查ToolStripMenuItem.Click += new System.EventHandler(this.位置精度检查ToolStripMenuItem_Click);
-            // 
-            // 表征精度检查ToolStripMenuItem
-            // 
-            this.表征精度检查ToolStripMenuItem.Name = "表征精度检查ToolStripMenuItem";
-            this.表征精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.表征精度检查ToolStripMenuItem.Text = "表征精度检查";
-            this.表征精度检查ToolStripMenuItem.Click += new System.EventHandler(this.表征精度检查ToolStripMenuItem_Click);
-            // 
             // axMapControl1
             // 
             this.axMapControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -447,6 +455,34 @@ namespace GISApp
             this.axMapControl1.TabIndex = 2;
             this.axMapControl1.OnMouseMove += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMouseMoveEventHandler(this.axMapControl1_OnMouseMove);
             this.axMapControl1.OnMapReplaced += new ESRI.ArcGIS.Controls.IMapControlEvents2_Ax_OnMapReplacedEventHandler(this.axMapControl1_OnMapReplaced);
+            // 
+            // 数学精度检查ToolStripMenuItem
+            // 
+            this.数学精度检查ToolStripMenuItem.Name = "数学精度检查ToolStripMenuItem";
+            this.数学精度检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.数学精度检查ToolStripMenuItem.Text = "数学精度检查";
+            this.数学精度检查ToolStripMenuItem.Click += new System.EventHandler(this.数学精度检查ToolStripMenuItem_Click);
+            // 
+            // 影像质量检查ToolStripMenuItem
+            // 
+            this.影像质量检查ToolStripMenuItem.Name = "影像质量检查ToolStripMenuItem";
+            this.影像质量检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.影像质量检查ToolStripMenuItem.Text = "影像质量检查";
+            this.影像质量检查ToolStripMenuItem.Click += new System.EventHandler(this.影像质量检查ToolStripMenuItem_Click);
+            // 
+            // 完备性检查ToolStripMenuItem
+            // 
+            this.完备性检查ToolStripMenuItem.Name = "完备性检查ToolStripMenuItem";
+            this.完备性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.完备性检查ToolStripMenuItem.Text = "完备性检查";
+            this.完备性检查ToolStripMenuItem.Click += new System.EventHandler(this.完备性检查ToolStripMenuItem_Click);
+            // 
+            // 格式一致性检查ToolStripMenuItem
+            // 
+            this.格式一致性检查ToolStripMenuItem.Name = "格式一致性检查ToolStripMenuItem";
+            this.格式一致性检查ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.格式一致性检查ToolStripMenuItem.Text = "格式一致性检查";
+            this.格式一致性检查ToolStripMenuItem.Click += new System.EventHandler(this.格式一致性检查ToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -523,6 +559,10 @@ namespace GISApp
         private System.Windows.Forms.ToolStripMenuItem 拓扑一致性检查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 位置精度检查ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 表征精度检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数学精度检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 影像质量检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 完备性检查ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 格式一致性检查ToolStripMenuItem;
     }
 }
 
