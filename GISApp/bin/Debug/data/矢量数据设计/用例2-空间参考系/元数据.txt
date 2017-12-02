@@ -1,0 +1,3 @@
+﻿长西引水渠图层是线图层，空间参考系中投影坐标系为Transverse_Mercator，单位是米，地理坐标系是GCS_Beijing_1954，椭球体参数为 Krasovsky_1940，由一个独立要素组成。整个图层的范围是Top：27974.022900  m，Left：105709.706700 m，Bottom：26004.939800 m，Right：109632.767000 m。
+要素的属性字段有线路名（String）、线路长(Double，11位小数）、线路起（String）、线路终(String)、年平均(Short)、主要功（无信息）、主要工（无信息）、建成年(Date)、改扩建(String)、其他（无信息）、Shape_Leng(Double，单位米，6位小数)。
+记录时间：2017年11月22日
