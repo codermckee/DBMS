@@ -149,6 +149,7 @@ namespace GISApp
                     查询ToolStripMenuItem.Visible = true;
                     导入ToolStripMenuItem.Visible = true;
                     质量控制ToolStripMenuItem.Visible = true;
+                    vectorQCToolStripMenuItem.Visible = true; 
                     统计ToolStripMenuItem.Visible = true;
                     选择操作项ToolStripMenuItem.Visible = true;
                     //入库ToolStripMenuItem.Visible = true;
@@ -965,5 +966,44 @@ namespace GISApp
             tc.dataGridView1.Columns[2].Width = 300;
             tc.Show();
         }
+
+        //矢量数据质量检查和控制模块
+        //用例1：逻辑一致性检查
+        private void logicalCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例2：空间参考系检查
+        private void cordinateCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例3：属性精度检查
+        private void attriPreCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例4：位置精度检查
+        private void posPreCheckToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例5：完整性检查
+        private void wholeCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例6：表征质量检查
+        private void charaQCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        //用例7：时间精度检查
+        private void timeQCheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+      
+
     }
 }

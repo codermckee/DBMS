@@ -1,0 +1,3 @@
+﻿入库河流是线图层，空间参考系中投影坐标系是Transverse_Mercator，单位是米，地理坐标系是GCS_Beijing_1954，椭球体参数为 Krasovsky_1940，由9个要素组成。整个图层的范围是Top：31411.249900，Left：102132.000000，Bottom：27213.423400，Right：110176.235700。
+要素的属性字段有河流名称（String,以河作为名称结尾）、河流长度（String）、位置（String）、流域面积（Float）、途径区域（String）、年平均流量（Float）、水质情况（String）、整治情况（String）、其他参数（String）、Shape_Leng（Double）。
+记录时间：2017.11.20
